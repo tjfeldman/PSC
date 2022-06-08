@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+   <title>StatesTest</title>
+
+    <!-- StatesTest references -->
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body id="game">
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/phaser.min.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/GenericTrials.js"></script>
+    <script src="scripts/ElectricTrials.js"></script>
+    <script src="scripts/GasTrials.js"></script>
+    <script src="scripts/StormTrials.js"></script>
+    
+    <link rel="apple-touch-icon" href="app_icon_152.png" />
+    <!--<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />-->
+    
+    <!--<div class="fontPreload" style="font-family: Tw Cen MT;">.</div> -->
+    <!--
+    <script>
+        var game;
+        var gameStates = new Array();
+        var currentTrialIndex = 0;  //global storage of where we are in the array
+
+        window.onload = function ()
+        {
+            //var game;
+            game = new Phaser.Game(1024, 768, Phaser.AUTO, '', { preload: preload, create: create });            
+            /*
+            //  The Google WebFont Loader will look for this object, so create it before loading the script.
+            WebFontConfig = {                
+                //  The Google Fonts we want to load (specify as many as you like in the array)
+                google: {
+                    //families: ['Open+Sans+Condensed:700:latin']
+                    families: ['Roboto+Condensed:700:latin']
+                    //families: ['Oswald::latin']
+                }
+            };
+            (function ()
+            {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+            */
+            function preload()
+            {
+                //game.load.image('background', 'images/background.png');
+                //  Load the Google WebFont Loader script
+                //game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js');
+            }
+            function create()
+            {
+                //game.add.image(0, 0, 'background');
+                game.state.add('boot', Main.Boot, true);//Main.Boot.key
+                game.state.add('preloader', Main.Preloader);
+                //game.state.add('mainMenu', Main.MainMenu);
+                //game.state.add('game', Main.Game);
+                /*game.state.add('trial1instr', Main.Trial1Instr);
+                game.state.add('trial1', Main.Trial1);
+                game.state.add('trial2instr', Main.Trial2Instr);
+                game.state.add('trial2', Main.Trial2);
+                game.state.add('trial3instr', Main.Trial3Instr);
+                game.state.add('trial3', Main.Trial3);
+                game.state.add('trial4instr', Main.Trial4Instr);
+                game.state.add('trial4', Main.Trial4);
+                game.state.add('trial5instr', Main.Trial5Instr);
+                game.state.add('trial5', Main.Trial5);
+                game.state.add('trial6instr', Main.Trial6Instr);
+                game.state.add('trial6', Main.Trial6);*/
+
+                //gameStates[0] = ['trial1instr',Main.Trial1Instr,'trial1',Main.Trial1];
+                //gameStates[1] = ['trial2instr', Main.Trial2Instr, 'trial2', Main.Trial2];
+                //gameStates[2] = ['trial3instr', Main.Trial3Instr, 'trial3', Main.Trial3];
+                //gameStates[3] = ['trial4instr', Main.Trial4Instr, 'trial4', Main.Trial4];
+                /*gameStates.push(['trial1instr', Main.Trial1Instr, 'trial1', Main.Trial1]);
+                gameStates.push(['trial2instr', Main.Trial2Instr, 'trial2', Main.Trial2]);
+                gameStates.push(['trial3instr', Main.Trial3Instr, 'trial3', Main.Trial3]);
+                gameStates.push(['trial4instr', Main.Trial4Instr, 'trial4', Main.Trial4]);
+                gameStates.push(['trial5instr', Main.Trial5Instr, 'trial5', Main.Trial5]);
+                gameStates.push(['trial6instr', Main.Trial6Instr, 'trial6', Main.Trial6]);*/
+                
+                makeAndStoreTrialStates('trial1instr', Main.Trial1Instr, 'trial1', Main.Trial1);
+                makeAndStoreTrialStates('trial2instr', Main.Trial2Instr, 'trial2', Main.Trial2);
+                makeAndStoreTrialStates('trial3instr', Main.Trial3Instr, 'trial3', Main.Trial3);
+                makeAndStoreTrialStates('trial4instr', Main.Trial4Instr, 'trial4', Main.Trial4);
+                makeAndStoreTrialStates('trial5instr', Main.Trial5Instr, 'trial5', Main.Trial5);
+                makeAndStoreTrialStates('trial6instr', Main.Trial6Instr, 'trial6', Main.Trial6);
+                makeAndStoreTrialStates('trial7instr', Main.Trial7Instr, 'trial7', Main.Trial7);
+                makeAndStoreTrialStates('trial8instr', Main.Trial8Instr, 'trial8', Main.Trial8);
+                makeAndStoreTrialStates('trial9instr', Main.Trial9Instr, 'trial9', Main.Trial9);
+
+                makeAndStoreTrialStates('trial10instr', Main.Trial10Instr, 'trial10', Main.Trial10);
+                makeAndStoreTrialStates('trial11instr', Main.Trial11Instr, 'trial11', Main.Trial11);
+                makeAndStoreTrialStates('trial12instr', Main.Trial12Instr, 'trial12', Main.Trial12);
+                makeAndStoreTrialStates('trial13instr', Main.Trial13Instr, 'trial13', Main.Trial13);
+                makeAndStoreTrialStates('trial14instr', Main.Trial14Instr, 'trial14', Main.Trial14);
+                makeAndStoreTrialStates('trial15instr', Main.Trial15Instr, 'trial15', Main.Trial15);
+                makeAndStoreTrialStates('trial16instr', Main.Trial16Instr, 'trial16', Main.Trial16);
+                makeAndStoreTrialStates('trial17instr', Main.Trial17Instr, 'trial17', Main.Trial17);
+                makeAndStoreTrialStates('trial18instr', Main.Trial18Instr, 'trial18', Main.Trial18);
+            }//create
+            function makeAndStoreTrialStates(instrKey,instrObject,trialKey,trialObject)
+            {
+                game.state.add(instrKey, instrObject);
+                game.state.add(trialKey, trialObject);
+                gameStates.push([instrKey, instrObject, trialKey, trialObject]);
+            }//makeAndStoreTrialStates
+        }
+    </script> -->
+</body>
+</html>

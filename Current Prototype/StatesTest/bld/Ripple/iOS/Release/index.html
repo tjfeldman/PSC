@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+   <title>StatesTest</title>
+
+    <!-- StatesTest references -->
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/phaser.min.js"></script>
+    <script src="scripts/game.js"></script>
+    
+    <div class="fontPreload" style="font-family: Tw Cen MT;">.</div>
+
+    <script>
+        window.onload = function ()
+        {
+            var game;
+            game = new Phaser.Game(1024, 768, Phaser.AUTO, '', { preload: preload, create: create });
+            /*
+            //  The Google WebFont Loader will look for this object, so create it before loading the script.
+            WebFontConfig = {                
+                //  The Google Fonts we want to load (specify as many as you like in the array)
+                google: {
+                    //families: ['Open+Sans+Condensed:700:latin']
+                    families: ['Roboto+Condensed:700:latin']
+                    //families: ['Oswald::latin']
+                }
+            };
+            (function ()
+            {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+            */
+            function preload()
+            {
+                //game.load.image('background', 'images/background.png');
+                //  Load the Google WebFont Loader script
+                //game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js');
+            }
+            function create()
+            {
+                //game.add.image(0, 0, 'background');
+                game.state.add('boot', Main.Boot, true);
+                game.state.add('preloader', Main.Preloader);
+                //game.state.add('mainMenu', Main.MainMenu);
+                //game.state.add('game', Main.Game);
+                game.state.add('trial1', Main.Trial1);
+                game.state.add('trial2', Main.Trial2);
+                game.state.add('trial3', Main.Trial3);
+                game.state.add('trial4instr', Main.Trial4Instr);
+                game.state.add('trial4', Main.Trial4);
+                game.state.add('trial5', Main.Trial5);
+                game.state.add('trial6', Main.Trial6);
+                game.state.add('trial7', Main.Trial7);
+                game.state.add('trial8', Main.Trial8);
+                game.state.add('trial9', Main.Trial9);
+                game.state.add('trial10', Main.Trial10);
+                game.state.add('trial11', Main.Trial11);
+                game.state.add('trial12', Main.Trial12);
+                game.state.add('trial13', Main.Trial13);
+            }
+        }
+    </script>
+</body>
+</html>

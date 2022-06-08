@@ -1,0 +1,23 @@
+﻿body {
+    margin: 0px;
+    padding:0px;
+    /*font-family: 'Oswald', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Tw Cen MT', sans-serif;
+}
+
+@font-face{ 
+    font-family: 'Tw Cen MT';
+    src: url('fonts/TCB.TTF') format('truetype');
+    /*src: url('fonts/websymbols-regular-webfont.eot');
+    src: url('fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/websymbols-regular-webfont.woff') format('woff'),
+       url('fonts/websymbols-regular-webfont.ttf') format('truetype'),
+       url('fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');*/
+}
+
+.fontPreload{
+    position:absolute;
+    left:-100px;
+}
